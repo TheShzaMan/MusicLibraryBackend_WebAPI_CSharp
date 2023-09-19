@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MusicLibrary_WebAPI.Models
+namespace MusicLibraryWebAPI.Model
 {
     public class Song
     {
@@ -9,8 +9,7 @@ namespace MusicLibrary_WebAPI.Models
         public string Title { get; set; }
         public string Artist { get; set; }
         public string Album { get; set; }
-        public DateTime ReleaseDate { get; set; }
+        public int ReleaseDate { get; set; }
         public string Genre { get; set; }
-
     }
 }
