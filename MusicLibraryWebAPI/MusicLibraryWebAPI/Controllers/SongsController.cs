@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using MusicLibraryWebAPI.Data;
 using MusicLibraryWebAPI.Model;
 using System.Runtime.CompilerServices;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -80,6 +81,33 @@ namespace MusicLibraryWebAPI.Controllers
             _context.Songs.Remove(songToDelete);
             _context.SaveChanges();
             return NoContent();
+        }
+       
+        [HttpPatch("{id}/like")]
+        public IActionResult Like(int id)
+        {
+            var song = _context.Songs
+                .Where(s => s.Id == id).SingleOrDefault();
+            song.Likes++;
+            _context.SaveChanges();
+            return StatusCode(201, $"Your input has been recorded and the total likes have been adjusted. Likes: {song.Likes}");
+        }
+        
+        [HttpPatch("{id}/dislike")]
+        public IActionResult Dislike(int id)
+        {
+            var song = _context.Songs
+                .Where(s => s.Id == id).SingleOrDefault();
+            if (song.Likes > 0)
+            {
+                song.Likes--;
+                _context.SaveChanges();
+                return StatusCode(201, $"Your input has been recorded and the total likes have been adjusted. Likes: {song.Likes}");
+            }
+            else
+            {
+                return StatusCode(201, $"Your input was received. No change was made to the total number of likes because there were zero to start with. Likes: {song.Likes}");
+            }
         }
     }
 }

@@ -139,6 +139,128 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Patch Like",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "likes",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7274/api/songs/4/like",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7274",
+					"path": [
+						"api",
+						"songs",
+						"4",
+						"like"
+					],
+					"query": [
+						{
+							"key": "Likes",
+							"value": "True",
+							"disabled": true
+						},
+						{
+							"key": "Dislikes",
+							"value": "False",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch Dislike",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "likes",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7274/api/songs/5/dislike",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7274",
+					"path": [
+						"api",
+						"songs",
+						"5",
+						"dislike"
+					],
+					"query": [
+						{
+							"key": "Likes",
+							"value": "True",
+							"disabled": true
+						},
+						{
+							"key": "Dislikes",
+							"value": "False",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
