@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "916251d4-c86a-4bc7-881a-e82d04d23a14",
+		"name": "MusicLibrary_Songs_WebAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29744212"
+	},
+	"item": [
+		{
+			"name": "Get All",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"strictSSL": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7274/api/songs",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7274",
+					"path": [
+						"api",
+						"songs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7274/api/songs/3",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7274",
+					"path": [
+						"api",
+						"songs",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Title\" : \"Cars\",\r\n    \"Artist\" : \"Gary Numan\",\r\n    \"Album\" : \"The Pleasure Principle\",\r\n    \"ReleaseDate\" : 1979,\r\n    \"Genre\" : \"New Wave\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7274/api/songs",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7274",
+					"path": [
+						"api",
+						"songs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Title\" : \"Cars(Remastered)\",\r\n    \"Artist\" : \"Gary Numan\",\r\n    \"Album\" : \"Greatest Hits\",\r\n    \"ReleaseDate\" : 1987,\r\n    \"Genre\" : \"New Wave\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7274/api/songs/6",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7274",
+					"path": [
+						"api",
+						"songs",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7274/api/songs/6",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7274",
+					"path": [
+						"api",
+						"songs",
+						"6"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
